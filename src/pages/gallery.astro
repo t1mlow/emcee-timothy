@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { siteData } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Emcee Timothy | Gallery"
+  description="Photo and video highlights from Emcee Timothy's hosted events."
+  pathname="/gallery"
+>
+  <Header pathname="/gallery" />
+
+  <main class="pb-5">
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7]">
+      <div class="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div
+          class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="max-w-3xl space-y-5">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600"
+            >
+              Gallery
+            </p>
+            <h1
+              class="font-['Plus_Jakarta_Sans'] text-4xl font-semibold tracking-[-0.06em] text-stone-900 sm:text-6xl"
+            >
+              Images and event films that show the room, not just the stage.
+            </h1>
+            <p class="text-base leading-8 text-stone-700">
+              This page is built to hold both photos and videos. The current
+              video section is ready for your real embeds or compressed clips
+              once you finish preparing them.
+            </p>
+          </div>
+
+          <a href="/#contact" class="btn-primary" style="color: #ffffff;">
+            Enquire now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Photo gallery"
+          title="Live moments, crowd interaction, and after-event snapshots."
+          text="Astro is optimizing these local images for you. If you later add more photos, import them in the site data file and the grid can grow without structural changes."
+        />
+
+        <div class="grid auto-rows-[260px] gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {
+            siteData.photos.map((photo, index) => (
+              <article
+                class:list={[
+                  "group relative overflow-hidden border border-white/80 bg-white/90",
+                  index === 0 && "md:row-span-2",
+                  index === 2 && "xl:col-span-2",
+                ]}
+              >
+                <Image
+                  src={photo.image}
+                  alt={photo.title}
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/88 to-transparent p-5">
+                  <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
+                    {photo.location}
+                  </p>
+                  <h2 class="mt-2 font-['Plus_Jakarta_Sans'] text-xl font-semibold tracking-[-0.04em] text-stone-900">
+                    {photo.title}
+                  </h2>
+                  <p class="mt-2 text-sm leading-7 text-stone-700">
+                    {photo.description}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#fbfaf7] py-20 text-stone-900 sm:py-24">
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Video showcase"
+          title="Use short, web-friendly clips or external embeds for the best experience."
+          text="A two-minute video at 1.2GB is far too heavy for direct upload. Compress it aggressively or host it on YouTube/Vimeo and embed it here."
+        />
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          {
+            siteData.videos.map((video) => (
+              <article class="overflow-hidden border border-stone-900/10 bg-white">
+                <div class="relative">
+                  <Image
+                    src={video.poster}
+                    alt={video.title}
+                    class="h-64 w-full object-cover"
+                  />
+                  <div class="absolute inset-x-4 top-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white">
+                    <span>{video.date}</span>
+                    <span>{video.duration}</span>
+                  </div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="grid h-20 w-20 place-items-center rounded-full bg-stone-950/78 text-base font-semibold text-stone-50 backdrop-blur-sm">
+                      Play
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-3 p-6">
+                  <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-semibold tracking-[-0.04em] text-stone-900">
+                    {video.title}
+                  </h3>
+                  <p class="text-sm leading-7 text-stone-800">
+                    {video.description}
+                  </p>
+                  <p class="rounded-2xl bg-stone-100 px-4 py-3 text-xs leading-6 text-stone-600">
+                    Replace this card in <code>src/data/site.ts</code> with an
+                    embed URL or a compressed local video when your final media
+                    is ready.
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

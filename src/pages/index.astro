@@ -1,0 +1,379 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { siteData } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Emcee Timothy | Home"
+  description={siteData.heroText}
+  pathname="/"
+>
+  <Header pathname="/" />
+
+  <main class="pb-5">
+    <section
+      class="relative overflow-hidden border-b border-stone-900/10 bg-[#fbfaf7]"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.8),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(230,223,214,0.45),_transparent_40%)]"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute right-[-6rem] top-1/2 hidden -translate-y-1/2 lg:block"
+        aria-hidden="true"
+      >
+        <div
+          class="relative h-[26rem] w-[26rem] rounded-full border border-stone-900/8 bg-white/20"
+        >
+          <div
+            class="absolute inset-[18%] rounded-full border border-stone-900/10"
+          >
+          </div>
+          <div
+            class="absolute inset-[34%] rounded-full border border-stone-900/10"
+          >
+          </div>
+          <div
+            class="absolute left-1/2 top-[16%] h-[52%] w-px -translate-x-1/2 bg-stone-900/12"
+          >
+          </div>
+          <div
+            class="absolute left-1/2 top-[12%] h-20 w-20 -translate-x-1/2 rounded-[45%_45%_38%_38%] border border-stone-900/12 bg-white/30"
+          >
+          </div>
+          <div
+            class="absolute left-1/2 top-[11.2rem] h-8 w-28 -translate-x-1/2 rounded-full border border-stone-900/12 bg-white/25"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div class="relative z-10 space-y-6 self-center">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.28em] text-stone-500"
+            >
+              Emcee Timothy
+            </p>
+            <h1
+              class="max-w-4xl font-['Plus_Jakarta_Sans'] text-[clamp(3.2rem,8vw,6.6rem)] font-semibold leading-[0.92] tracking-[-0.075em] text-stone-900"
+            >
+              Calm presence. Clean delivery.
+            </h1>
+            <p class="max-w-lg text-lg leading-8 text-stone-700">
+              {siteData.tagline}
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="#contact" class="btn-primary" style="color: #ffffff;">
+                Book an event
+              </a>
+              <a href="/gallery" class="btn-secondary"> View gallery </a>
+            </div>
+          </div>
+
+          <div class="relative z-10 flex items-end lg:justify-end">
+            <div class="border-l border-stone-900/12 pl-6 lg:max-w-sm">
+              <a
+                href="/gallery"
+                class="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] text-stone-700 transition hover:text-[var(--accent)]"
+              >
+                <span class="inline-block h-px w-14 bg-current"></span>
+                See live moments
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="overflow-hidden border-b border-stone-900/10 bg-[#fbfaf7] py-4"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span>EMCEE TIMOTHY</span>
+            <span>PRIVATE EVENTS</span>
+            <span>CORPORATE HOSTING</span>
+            <span>COMMUNITY CELEBRATIONS</span>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span>EMCEE TIMOTHY</span>
+            <span>PRIVATE EVENTS</span>
+            <span>CORPORATE HOSTING</span>
+            <span>COMMUNITY CELEBRATIONS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+      <div
+        class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:px-8"
+      >
+        <div class="space-y-6 lg:max-w-md">
+          <SectionHeading
+            eyebrow="About"
+            title="A calm, engaging voice for events that need both clarity and personality."
+          />
+          <div
+            class="border border-white/70 bg-white/88 p-3 shadow-[0_20px_60px_rgba(25,25,25,0.08)]"
+          >
+            <Image
+              src={siteData.heroPortrait}
+              alt="Timothy by the seaside"
+              class="aspect-[4/5] w-full object-cover object-center"
+            />
+          </div>
+        </div>
+        <div class="space-y-6 pt-1">
+          {
+            siteData.about.map((paragraph) => (
+              <p class="text-base leading-8 text-stone-700">{paragraph}</p>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="What Timothy brings"
+          title="Hosting styles that adapt to the room, not the other way around."
+          text="A minimalist stage presence does not mean flat delivery. The hosting approach shifts with the crowd while keeping the tone intentional and composed."
+        />
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          {
+            siteData.services.map((service) => (
+              <article class="border border-stone-900/10 bg-white/78 p-6">
+                <div class="mb-5 grid h-14 w-14 place-items-center rounded-full bg-stone-900 text-lg font-semibold text-white shadow-sm">
+                  0{siteData.services.indexOf(service) + 1}
+                </div>
+                <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-semibold tracking-[-0.04em] text-stone-900">
+                  {service.title}
+                </h3>
+                <p class="mt-4 text-sm leading-7 text-stone-700">
+                  {service.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
+    >
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Packages"
+          title="Simple options for different event needs."
+          text="A clean package structure keeps planning straightforward. Adjust the pricing or inclusions any time from the central site data file."
+        />
+
+        <div class="grid gap-8 lg:grid-cols-2">
+          {
+            siteData.packages.map((pkg) => (
+              <article class="space-y-6 border-t border-stone-900/12 pt-6">
+                <div class="space-y-2">
+                  <h3 class="font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.04em] text-stone-900">
+                    {pkg.title}
+                  </h3>
+                  <p class="text-2xl font-medium text-stone-700">{pkg.price}</p>
+                </div>
+                <ul class="space-y-3 text-base leading-8 text-stone-800">
+                  {pkg.features.map((feature) => (
+                    <li>- {feature}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Selected moments"
+          title="A quick look at the energy, audience range, and event environments."
+          text="These visuals are wired to the local image files already in the project. You can replace or add more later without changing the layout."
+        />
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          {
+            siteData.photos.map((photo, index) => (
+              <article
+                class:list={[
+                  "overflow-hidden border border-white/80 bg-white/90",
+                  index === 2 && "md:col-span-2 xl:col-span-2",
+                ]}
+              >
+                <Image
+                  src={photo.image}
+                  alt={photo.title}
+                  class="h-72 w-full object-cover transition duration-500 hover:scale-105"
+                />
+                <div class="space-y-2 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
+                    {photo.location}
+                  </p>
+                  <h3 class="font-['Plus_Jakarta_Sans'] text-lg font-semibold tracking-[-0.03em] text-stone-900">
+                    {photo.title}
+                  </h3>
+                  <p class="text-sm leading-7 text-stone-700">
+                    {photo.description}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="pt-4">
+          <a href="/gallery" class="btn-secondary"> Open full gallery </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
+    >
+      <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="From the people"
+          title="Feedback that reflects Timothy's stage presence."
+        />
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          {
+            siteData.testimonials.map((testimonial) => (
+              <blockquote class="border border-stone-900/10 bg-white/88 p-6">
+                <p class="text-base leading-8 text-stone-800">
+                  "{testimonial.quote}"
+                </p>
+                <footer class="mt-6 text-sm font-semibold text-stone-900">
+                  {testimonial.author}
+                </footer>
+              </blockquote>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+      <div
+        class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-8"
+      >
+        <div class="space-y-4">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600"
+          >
+            Recognition
+          </p>
+          <h2
+            class="max-w-2xl font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-4xl"
+          >
+            {siteData.award}
+          </h2>
+        </div>
+        <div
+          class="laurel text-[5rem] leading-none text-stone-500/80"
+          aria-hidden="true"
+        >
+          <div>+</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-[#fbfaf7] py-20 sm:py-24">
+      <div
+        class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8"
+      >
+        <div class="space-y-5">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600"
+          >
+            Book Timothy
+          </p>
+          <h2
+            class="max-w-2xl font-['Plus_Jakarta_Sans'] text-4xl font-semibold tracking-[-0.05em] text-stone-900 sm:text-5xl"
+          >
+            Planning a dinner, celebration, launch, or community programme?
+          </h2>
+          <p class="max-w-xl text-base leading-8 text-stone-700">
+            Start with a short message about the date, audience, and event tone.
+            Update the placeholder links below with Timothy's real contact
+            details before launch.
+          </p>
+        </div>
+
+        <div class="border border-stone-900/8 bg-[#f8f6f2] p-6">
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              class="icon-button bg-stone-900 text-white hover:border-[var(--accent)] hover:bg-[var(--accent)]"
+              href={siteData.contact.whatsappUrl}
+              aria-label="WhatsApp"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="h-6 w-6 fill-current"
+              >
+                <path
+                  d="M19.05 4.94A9.77 9.77 0 0 0 12.08 2a9.9 9.9 0 0 0-8.58 14.84L2 22l5.3-1.38a9.82 9.82 0 0 0 4.72 1.2h.01A9.98 9.98 0 0 0 22 11.92a9.76 9.76 0 0 0-2.95-6.98Zm-6.97 15.2a8.13 8.13 0 0 1-4.14-1.13l-.3-.18-3.15.82.84-3.07-.2-.31a8.17 8.17 0 0 1 6.95-12.52 8.08 8.08 0 0 1 5.77 2.42 8.14 8.14 0 0 1-5.77 13.97Zm4.47-6.1c-.24-.12-1.4-.7-1.62-.77-.22-.08-.38-.12-.54.12-.16.23-.62.76-.76.91-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.16-.7-.62-1.18-1.39-1.31-1.62-.14-.23-.01-.36.1-.48.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.57.24 1.02.38 1.36.49.57.18 1.09.16 1.5.1.46-.07 1.4-.57 1.6-1.12.2-.56.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="icon-button bg-white text-stone-900"
+              href={siteData.contact.instagramUrl}
+              aria-label="Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="h-6 w-6 fill-none stroke-current stroke-2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+            </a>
+            <button
+              type="button"
+              class="copy-email-btn icon-button bg-white text-stone-900"
+              data-email={siteData.contact.email}
+              aria-label="Copy email"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="h-6 w-6 fill-none stroke-current stroke-2"
+              >
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mt-5 space-y-2 text-sm text-stone-700">
+            <p>WhatsApp: +65 9691 7191</p>
+            <p>Email: {siteData.contact.email}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
