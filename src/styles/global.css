@@ -191,6 +191,12 @@ img {
   box-shadow: 0 14px 28px rgba(23, 19, 18, 0.08);
 }
 
+.footer-social-button:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
 .laurel {
   opacity: 0.9;
   filter: drop-shadow(0 12px 24px rgba(220, 191, 93, 0.2));

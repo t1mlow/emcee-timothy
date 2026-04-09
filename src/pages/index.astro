@@ -114,13 +114,22 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
       <div
-        class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:px-8"
+        class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-8"
       >
-        <div class="space-y-6 lg:max-w-md">
+        <div class="space-y-6">
           <SectionHeading
             eyebrow="About"
             title="A calm, engaging voice for events that need both clarity and personality."
           />
+          <div class="max-w-2xl space-y-6 pt-1">
+            {
+              siteData.about.map((paragraph) => (
+                <p class="text-base leading-8 text-stone-700">{paragraph}</p>
+              ))
+            }
+          </div>
+        </div>
+        <div class="lg:pl-6">
           <div
             class="border border-white/70 bg-white/88 p-3 shadow-[0_20px_60px_rgba(25,25,25,0.08)]"
           >
@@ -130,13 +139,6 @@ import Layout from "../layouts/Layout.astro";
               class="aspect-[4/5] w-full object-cover object-center"
             />
           </div>
-        </div>
-        <div class="space-y-6 pt-1">
-          {
-            siteData.about.map((paragraph) => (
-              <p class="text-base leading-8 text-stone-700">{paragraph}</p>
-            ))
-          }
         </div>
       </div>
     </section>
