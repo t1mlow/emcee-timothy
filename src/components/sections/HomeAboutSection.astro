@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import SectionHeading from "../SectionHeading.astro";
 import { siteData } from "../../data/site";
 ---
@@ -38,7 +37,7 @@ import { siteData } from "../../data/site";
           <span
             class="pointer-events-none absolute bottom-3 right-3 z-10 block h-6 w-6 border-b border-r border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
             aria-hidden="true"></span>
-          <Image
+          <img
             src={siteData.heroPortrait}
             alt="Timothy on stage"
             class="aspect-[4/5] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"

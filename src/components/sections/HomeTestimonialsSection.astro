@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import SectionHeading from "../SectionHeading.astro";
 import { siteData } from "../../data/site";
-import peopleImage from "../../assets/gallery/people.jpg";
 
 const [firstTestimonial, featuredTestimonial, thirdTestimonial] =
   siteData.testimonials;
@@ -56,8 +54,8 @@ const [firstTestimonial, featuredTestimonial, thirdTestimonial] =
               class="pointer-events-none absolute bottom-3 right-3 z-10 block h-6 w-6 border-b border-r border-white/80 shadow-[0_0_0_1px_rgba(28,25,23,0.08)]"
               aria-hidden="true"
             ></span>
-            <Image
-              src={peopleImage}
+            <img
+              src="/gallery/people.jpg"
               alt="Guests enjoying an emceed event"
               class="aspect-[5/4] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
             />

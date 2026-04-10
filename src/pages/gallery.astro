@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import SectionHeading from "../components/SectionHeading.astro";
@@ -148,7 +147,7 @@ import Layout from "../layouts/Layout.astro";
                       class="pointer-events-none absolute bottom-3 right-3 z-10 block h-5 w-5 border-b border-r border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
                       aria-hidden="true"
                     ></span>
-                    <Image
+                    <img
                       src={photo.image}
                       alt={photo.title}
                       class="h-72 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
@@ -203,7 +202,7 @@ import Layout from "../layouts/Layout.astro";
                       class="pointer-events-none absolute bottom-3 right-3 z-10 block h-5 w-5 border-b border-r border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
                       aria-hidden="true"
                     ></span>
-                    <Image
+                    <img
                       src={video.poster}
                       alt={video.title}
                       class="h-64 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"

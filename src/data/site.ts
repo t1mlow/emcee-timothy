@@ -1,17 +1,8 @@
-import type { ImageMetadata } from "astro";
-
-import heroPortrait from "../assets/portraits/timothy-hero.jpg";
-import galleryOne from "../assets/gallery/event-01.jpg";
-import galleryTwo from "../assets/gallery/event-02.jpg";
-import galleryThree from "../assets/gallery/event-03.jpg";
-import galleryFour from "../assets/gallery/event-04.jpg";
-import galleryFive from "../assets/gallery/event-05.jpg";
-
 type PhotoItem = {
   title: string;
   location: string;
   description: string;
-  image: ImageMetadata;
+  image: string;
 };
 
 type VideoItem = {
@@ -19,7 +10,7 @@ type VideoItem = {
   date: string;
   description: string;
   embedUrl?: string;
-  poster: ImageMetadata;
+  poster: string;
   duration: string;
 };
 
@@ -128,37 +119,37 @@ export const siteData = {
       ],
     },
   ] as PackageItem[],
-  heroPortrait,
+  heroPortrait: "/portraits/timothy-hero.jpg",
   photos: [
     {
       title: "Stage-side connection",
       location: "Community event",
       description: "A closer, people-first hosting moment.",
-      image: galleryOne,
+      image: "/gallery/event-01.jpg",
     },
     {
       title: "Crowd energy",
       location: "Live gathering",
       description: "Quick smiles, easy engagement, and a relaxed atmosphere.",
-      image: galleryTwo,
+      image: "/gallery/event-02.jpg",
     },
     {
       title: "On the mic",
       location: "Hosted programme",
       description: "Focused delivery during the programme flow.",
-      image: galleryThree,
+      image: "/gallery/event-03.jpg",
     },
     {
       title: "Family audience",
       location: "Festive celebration",
       description: "Interactive hosting for a mixed-age crowd.",
-      image: galleryFour,
+      image: "/gallery/event-04.jpg",
     },
     {
       title: "Team celebration",
       location: "Sports and social night",
       description: "A candid post-event moment with the crew.",
-      image: galleryFive,
+      image: "/gallery/event-05.jpg",
     },
   ] as PhotoItem[],
   videos: [
@@ -168,7 +159,7 @@ export const siteData = {
       description:
         "Recommended setup: replace this card with a compressed MP4 or a YouTube/Vimeo embed.",
       duration: "00:53",
-      poster: galleryOne,
+      poster: "/gallery/event-01.jpg",
     },
     {
       title: "Network Courier Dinner and Dance",
@@ -176,7 +167,7 @@ export const siteData = {
       description:
         "Use this slot for a short highlight reel or host it externally to keep the site fast.",
       duration: "01:20",
-      poster: galleryThree,
+      poster: "/gallery/event-03.jpg",
     },
     {
       title: "JK Tech Badminton Event",
@@ -184,7 +175,7 @@ export const siteData = {
       description:
         "If the raw file is very large, compress it first and keep the website version under web-friendly sizes.",
       duration: "02:00",
-      poster: galleryFive,
+      poster: "/gallery/event-05.jpg",
     },
   ] as VideoItem[],
 };
