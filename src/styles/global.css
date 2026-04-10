@@ -66,10 +66,6 @@ img {
   background: rgba(38, 34, 31, 0.35);
 }
 
-.marquee-group span:last-child::after {
-  display: none;
-}
-
 .btn-primary {
   display: inline-flex;
   align-items: center;

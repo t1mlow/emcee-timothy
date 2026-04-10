@@ -1,0 +1,30 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import { siteData } from "../../data/site";
+---
+
+<section
+  class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
+>
+  <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="From the people"
+      title="Feedback that reflects Timothy's stage presence."
+    />
+
+    <div class="grid gap-5 lg:grid-cols-3">
+      {
+        siteData.testimonials.map((testimonial) => (
+          <blockquote class="border border-stone-900/10 bg-white/88 p-6">
+            <p class="text-base leading-8 text-stone-800">
+              "{testimonial.quote}"
+            </p>
+            <footer class="mt-6 text-sm font-semibold text-stone-900">
+              {testimonial.author}
+            </footer>
+          </blockquote>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -13,9 +13,14 @@ const centered = align === "center";
 <div class:list={["space-y-4", centered && "mx-auto max-w-2xl text-center"]}>
   {
     eyebrow && (
-      <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
-        {eyebrow}
-      </p>
+      <div
+        class:list={["flex items-center gap-4", centered && "justify-center"]}
+      >
+        <span class="h-px w-12 bg-stone-900/18" />
+        <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
+          {eyebrow}
+        </p>
+      </div>
     )
   }
   <h2

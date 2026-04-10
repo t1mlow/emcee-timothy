@@ -1,0 +1,28 @@
+---
+import { siteData } from "../../data/site";
+---
+
+<section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+  <div
+    class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-8"
+  >
+    <div class="space-y-4">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600"
+      >
+        Recognition
+      </p>
+      <h2
+        class="max-w-2xl font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-4xl"
+      >
+        {siteData.award}
+      </h2>
+    </div>
+    <div
+      class="laurel text-[5rem] leading-none text-stone-500/80"
+      aria-hidden="true"
+    >
+      <div>+</div>
+    </div>
+  </div>
+</section>

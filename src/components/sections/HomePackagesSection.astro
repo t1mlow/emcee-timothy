@@ -1,0 +1,86 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import { siteData } from "../../data/site";
+---
+
+<section
+  class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
+>
+  <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Packages"
+      title="Simple options for different event needs."
+      text="A clean package structure keeps planning straightforward. Adjust the pricing or inclusions any time from the central site data file."
+    />
+
+    <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
+      <div
+        class="relative overflow-hidden border border-stone-900/10 bg-white/55 px-6 py-8 sm:px-8"
+      >
+        <div
+          class="pointer-events-none absolute -right-12 top-8 h-32 w-32 rounded-full border border-stone-900/8"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="pointer-events-none absolute right-6 top-16 h-px w-24 bg-stone-900/10"
+          aria-hidden="true"
+        >
+        </div>
+        <div class="space-y-5">
+          <div class="flex items-center gap-4 text-stone-500">
+            <span class="h-px w-10 bg-stone-900/18"></span>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em]">
+              Pricing tiers
+            </p>
+          </div>
+          <h3
+            class="max-w-sm font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.05em] text-stone-900 sm:text-4xl"
+          >
+            Clear packages with room to tailor the flow.
+          </h3>
+          <p class="max-w-md text-base leading-8 text-stone-700">
+            Start with a simple tier, then adjust the event rhythm, engagement
+            moments, and planning support to fit the audience.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        {
+          siteData.packages.map((pkg, index) => (
+            <article class="relative border-t border-stone-900/12 pt-6">
+              <div class="grid gap-6 md:grid-cols-[0.34fr_0.66fr] md:items-start">
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 text-stone-500">
+                    <span class="h-px w-8 bg-stone-900/14" />
+                    <p class="text-[0.72rem] font-semibold uppercase tracking-[0.3em]">
+                      0{index + 1}
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-3xl">
+                      {pkg.title}
+                    </h3>
+                    <p class="text-xl font-medium text-stone-700">
+                      {pkg.price}
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="space-y-0 border-l border-stone-900/10 md:pl-6">
+                  {pkg.features.map((feature) => (
+                    <li class="flex gap-4 border-b border-stone-900/8 py-3 text-base leading-7 text-stone-800 last:border-b-0 last:pb-0">
+                      <span class="mt-[0.85rem] inline-block h-1.5 w-1.5 rounded-full bg-stone-900/45" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

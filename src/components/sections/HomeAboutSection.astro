@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import SectionHeading from "../SectionHeading.astro";
+import { siteData } from "../../data/site";
+---
+
+<section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+  <div
+    class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-8"
+  >
+    <div class="space-y-6">
+      <SectionHeading
+        eyebrow="About"
+        title="A calm, engaging voice for events that need both clarity and personality."
+      />
+      <div class="max-w-2xl space-y-6 pt-1">
+        {
+          siteData.about.map((paragraph) => (
+            <p class="text-base leading-8 text-stone-700">{paragraph}</p>
+          ))
+        }
+      </div>
+    </div>
+    <div class="lg:pl-6">
+      <div class="relative mx-auto max-w-sm lg:mx-0">
+        <div
+          class="absolute inset-0 translate-x-[6px] translate-y-[6px] border border-stone-900/12"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="group relative overflow-hidden border border-stone-900/12 bg-white/90 shadow-[0_12px_40px_rgba(25,25,25,0.07)]"
+        >
+          <span
+            class="pointer-events-none absolute left-3 top-3 z-10 block h-6 w-6 border-l border-t border-stone-900/25"
+            aria-hidden="true"></span>
+          <span
+            class="pointer-events-none absolute bottom-3 right-3 z-10 block h-6 w-6 border-b border-r border-stone-900/25"
+            aria-hidden="true"></span>
+          <Image
+            src={siteData.heroPortrait}
+            alt="Timothy on stage"
+            class="aspect-[4/5] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
+          />
+        </div>
+        <div class="mt-4 flex items-center gap-3">
+          <span class="block h-px w-6 bg-stone-400/50"></span>
+          <span class="text-[0.6rem] uppercase tracking-[0.4em] text-stone-400">
+            Ready for the room
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

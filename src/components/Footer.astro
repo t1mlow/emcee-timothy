@@ -6,7 +6,129 @@ import { siteData } from "../data/site";
   <div
     class="relative overflow-hidden border-t border-stone-900/12 bg-[#121212] text-stone-100"
   >
-    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+    <!-- Background: scattered sparkles -->
+    <svg
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 h-full w-full"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1000 400"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="footer-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="white" stop-opacity="0.06"></stop>
+          <stop offset="100%" stop-color="white" stop-opacity="0"></stop>
+        </radialGradient>
+      </defs>
+
+      <!-- subtle glow bloom top-right -->
+      <ellipse cx="870" cy="60" rx="200" ry="140" fill="url(#footer-glow)"
+      ></ellipse>
+
+      <!-- large sparkle — top right -->
+      <g transform="translate(870, 90)" opacity="0.6">
+        <path d="M0,-18 L2,0 L0,18 L-2,0 Z" fill="white"></path>
+        <path d="M-18,0 L0,2 L18,0 L0,-2 Z" fill="white"></path>
+      </g>
+
+      <!-- medium sparkle — upper centre-left -->
+      <g transform="translate(310, 80)" opacity="0.4">
+        <path d="M0,-11 L1.2,0 L0,11 L-1.2,0 Z" fill="white"></path>
+        <path d="M-11,0 L0,1.2 L11,0 L0,-1.2 Z" fill="white"></path>
+      </g>
+
+      <!-- small sparkle — left side mid -->
+      <g transform="translate(60, 220)" opacity="0.35">
+        <path d="M0,-7 L0.8,0 L0,7 L-0.8,0 Z" fill="white"></path>
+        <path d="M-7,0 L0,0.8 L7,0 L0,-0.8 Z" fill="white"></path>
+      </g>
+
+      <!-- small sparkle — bottom centre-right -->
+      <g transform="translate(680, 340)" opacity="0.3">
+        <path d="M0,-8 L0.9,0 L0,8 L-0.9,0 Z" fill="white"></path>
+        <path d="M-8,0 L0,0.9 L8,0 L0,-0.9 Z" fill="white"></path>
+      </g>
+
+      <!-- tiny sparkle — top left corner -->
+      <g transform="translate(120, 50)" opacity="0.25">
+        <path d="M0,-5 L0.6,0 L0,5 L-0.6,0 Z" fill="white"></path>
+        <path d="M-5,0 L0,0.6 L5,0 L0,-0.6 Z" fill="white"></path>
+      </g>
+
+      <!-- dot cluster — right side -->
+      <circle cx="950" cy="200" r="2" fill="white" opacity="0.3"></circle>
+      <circle cx="940" cy="215" r="1.2" fill="white" opacity="0.2"></circle>
+      <circle cx="958" cy="222" r="1.5" fill="white" opacity="0.18"></circle>
+
+      <!-- dot cluster — bottom left -->
+      <circle cx="40" cy="340" r="1.8" fill="white" opacity="0.25"></circle>
+      <circle cx="52" cy="352" r="1.2" fill="white" opacity="0.18"></circle>
+
+      <!-- lone dot — centre top -->
+      <circle cx="500" cy="30" r="1.5" fill="white" opacity="0.22"></circle>
+    </svg>
+
+    <!-- Star/compass — desktop-only background decoration -->
+    <svg
+      aria-hidden="true"
+      class="pointer-events-none absolute hidden lg:block"
+      style="right: 12%; top: 52%; transform: translateY(-50%);"
+      width="200"
+      height="200"
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+      opacity="0.07"
+    >
+      <!-- Concentric rings -->
+      <circle
+        cx="100"
+        cy="100"
+        r="95"
+        fill="none"
+        stroke="white"
+        stroke-width="1"></circle>
+      <circle
+        cx="100"
+        cy="100"
+        r="74"
+        fill="none"
+        stroke="white"
+        stroke-width="0.6"></circle>
+      <circle
+        cx="100"
+        cy="100"
+        r="52"
+        fill="none"
+        stroke="white"
+        stroke-width="0.5"></circle>
+      <!-- Cross lines -->
+      <line x1="100" y1="5" x2="100" y2="195" stroke="white" stroke-width="0.5"
+      ></line>
+      <line x1="5" y1="100" x2="195" y2="100" stroke="white" stroke-width="0.5"
+      ></line>
+      <line x1="33" y1="33" x2="167" y2="167" stroke="white" stroke-width="0.4"
+      ></line>
+      <line x1="167" y1="33" x2="33" y2="167" stroke="white" stroke-width="0.4"
+      ></line>
+      <!-- Centre sparkle -->
+      <path d="M100,78 L102.5,100 L100,122 L97.5,100 Z" fill="white"></path>
+      <path d="M78,100 L100,102.5 L122,100 L100,97.5 Z" fill="white"></path>
+      <path
+        d="M100,85 L101.8,100 L100,115 L98.2,100 Z"
+        fill="white"
+        transform="rotate(45 100 100)"></path>
+      <path
+        d="M85,100 L100,101.8 L115,100 L100,98.2 Z"
+        fill="white"
+        transform="rotate(45 100 100)"></path>
+      <!-- Tick dots at cardinal points -->
+      <circle cx="100" cy="5" r="2.5" fill="white"></circle>
+      <circle cx="100" cy="195" r="2.5" fill="white"></circle>
+      <circle cx="5" cy="100" r="2.5" fill="white"></circle>
+      <circle cx="195" cy="100" r="2.5" fill="white"></circle>
+    </svg>
+
+    <div class="relative z-[1] mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <!-- Row 1: Watermark -->
       <div
         class="select-none overflow-hidden pt-8 text-center"
@@ -41,10 +163,6 @@ import { siteData } from "../data/site";
         <div class="space-y-4 text-center lg:text-left">
           <p class="text-xs uppercase tracking-[0.35em] text-stone-400">
             Connect with Timothy
-          </p>
-          <p class="mx-auto max-w-xs text-sm leading-6 text-stone-400 lg:mx-0">
-            Ready to book or have a question? Reach out on any of these
-            channels.
           </p>
           <div class="flex flex-wrap justify-center gap-3 lg:justify-start">
             <a
@@ -97,6 +215,9 @@ import { siteData } from "../data/site";
               </svg>
             </button>
           </div>
+          <p class="mx-auto max-w-xs text-sm leading-6 text-stone-400 lg:mx-0">
+            Replies within 24 hours for event enquiries.
+          </p>
         </div>
 
         <div

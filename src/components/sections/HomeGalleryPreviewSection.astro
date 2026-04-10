@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import SectionHeading from "../SectionHeading.astro";
+import { siteData } from "../../data/site";
+---
+
+<section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Selected moments"
+      title="A quick look at the energy, audience range, and event environments."
+      text="These visuals are wired to the local image files already in the project. You can replace or add more later without changing the layout."
+    />
+
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+      {
+        siteData.photos.map((photo, index) => (
+          <article
+            class:list={[
+              "overflow-hidden border border-white/80 bg-white/90",
+              index === 2 && "md:col-span-2 xl:col-span-2",
+            ]}
+          >
+            <Image
+              src={photo.image}
+              alt={photo.title}
+              class="h-72 w-full object-cover transition duration-500 hover:scale-105"
+            />
+            <div class="space-y-2 p-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
+                {photo.location}
+              </p>
+              <h3 class="font-['Plus_Jakarta_Sans'] text-lg font-semibold tracking-[-0.03em] text-stone-900">
+                {photo.title}
+              </h3>
+              <p class="text-sm leading-7 text-stone-700">
+                {photo.description}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="pt-4">
+      <a href="/gallery" class="btn-secondary">Open full gallery</a>
+    </div>
+  </div>
+</section>

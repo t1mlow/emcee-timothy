@@ -38,8 +38,9 @@ export const siteData = {
   heroText:
     "Timothy hosts community celebrations, private events, and corporate gatherings with a warm stage presence that keeps the room engaged from the first introduction to the closing line.",
   about: [
-    "I began speaking publicly in primary school and never really stopped. Over the years, that early spark turned into a love for reading the room, guiding the programme, and making guests feel included.",
-    "Now I emcee with a minimalist, composed style that still feels lively. Whether the crowd is formal, festive, or family-oriented, the goal is always the same: create a smooth experience people remember for the right reasons.",
+    "It started in primary school, when Timothy realised singing was not quite his lane, but his voice, presence, and energy often stood out. That early encouragement grew into a genuine love for public speaking, hosting, and creating the right atmosphere for a room.",
+    "Today, emceeing is a passion project alongside his career in shipping. With a calm delivery, clear communication, and an engaging stage presence, Timothy brings fresh energy to celebrations, corporate gatherings, and community events without losing the sense of professionalism they require.",
+    "He is excited to keep growing in this space, take on new opportunities, and contribute to programmes that feel smooth, memorable, and enjoyable for both organisers and audiences.",
   ],
   highlights: [
     {
