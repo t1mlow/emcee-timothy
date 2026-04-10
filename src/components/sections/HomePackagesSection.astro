@@ -7,80 +7,79 @@ import { siteData } from "../../data/site";
   class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
 >
   <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
-    <SectionHeading
-      eyebrow="Packages"
-      title="Simple options for different event needs."
-      text="A clean package structure keeps planning straightforward. Adjust the pricing or inclusions any time from the central site data file."
-    />
+    <div
+      class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-start xl:grid-cols-[minmax(0,1fr)_18rem]"
+    >
+      <SectionHeading
+        eyebrow="Packages"
+        title="Simple, clear options for every event."
+        text="Choose a starting tier, then shape the flow, engagement, and planning support around the kind of room you are hosting."
+        mobileCenter={true}
+      />
 
-    <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
-      <div
-        class="relative overflow-hidden border border-stone-900/10 bg-white/55 px-6 py-8 sm:px-8"
-      >
-        <div
-          class="pointer-events-none absolute -right-12 top-8 h-32 w-32 rounded-full border border-stone-900/8"
-          aria-hidden="true"
+      <div class="hidden lg:flex lg:justify-end lg:pt-3" aria-hidden="true">
+        <svg
+          class="h-auto w-full max-w-[14rem] xl:max-w-[18rem]"
+          viewBox="0 0 290 160"
+          xmlns="http://www.w3.org/2000/svg"
         >
-        </div>
-        <div
-          class="pointer-events-none absolute right-6 top-16 h-px w-24 bg-stone-900/10"
-          aria-hidden="true"
-        >
-        </div>
-        <div class="space-y-5">
-          <div class="flex items-center gap-4 text-stone-500">
-            <span class="h-px w-10 bg-stone-900/18"></span>
-            <p class="text-xs font-semibold uppercase tracking-[0.3em]">
-              Pricing tiers
-            </p>
-          </div>
-          <h3
-            class="max-w-sm font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.05em] text-stone-900 sm:text-4xl"
-          >
-            Clear packages with room to tailor the flow.
-          </h3>
-          <p class="max-w-md text-base leading-8 text-stone-700">
-            Start with a simple tier, then adjust the event rhythm, engagement
-            moments, and planning support to fit the audience.
-          </p>
-        </div>
-      </div>
-
-      <div class="space-y-6">
-        {
-          siteData.packages.map((pkg, index) => (
-            <article class="relative border-t border-stone-900/12 pt-6">
-              <div class="grid gap-6 md:grid-cols-[0.34fr_0.66fr] md:items-start">
-                <div class="space-y-3">
-                  <div class="flex items-center gap-4 text-stone-500">
-                    <span class="h-px w-8 bg-stone-900/14" />
-                    <p class="text-[0.72rem] font-semibold uppercase tracking-[0.3em]">
-                      0{index + 1}
-                    </p>
-                  </div>
-                  <div class="space-y-2">
-                    <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-3xl">
-                      {pkg.title}
-                    </h3>
-                    <p class="text-xl font-medium text-stone-700">
-                      {pkg.price}
-                    </p>
-                  </div>
-                </div>
-
-                <ul class="space-y-0 border-l border-stone-900/10 md:pl-6">
-                  {pkg.features.map((feature) => (
-                    <li class="flex gap-4 border-b border-stone-900/8 py-3 text-base leading-7 text-stone-800 last:border-b-0 last:pb-0">
-                      <span class="mt-[0.85rem] inline-block h-1.5 w-1.5 rounded-full bg-stone-900/45" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))
-        }
+          <g stroke="rgba(28,25,23,0.13)" stroke-linecap="round" fill="none">
+            <path
+              d="M18 80 H118 C134 80 142 58 160 58 H272"
+              stroke-width="1.4"
+            ></path>
+            <path
+              d="M18 98 H134 C154 98 158 122 184 122 H272"
+              stroke-width="1.4"
+            ></path>
+            <circle cx="118" cy="80" r="3.5" fill="rgba(28,25,23,0.13)"></circle>
+            <circle cx="160" cy="58" r="3.5" fill="rgba(28,25,23,0.13)"></circle>
+            <circle cx="134" cy="98" r="3.5" fill="rgba(28,25,23,0.13)"></circle>
+            <circle cx="184" cy="122" r="3.5" fill="rgba(28,25,23,0.13)"></circle>
+            <line x1="18" y1="40" x2="18" y2="120" stroke-width="1"></line>
+            <line x1="272" y1="40" x2="272" y2="120" stroke-width="1"></line>
+          </g>
+        </svg>
       </div>
     </div>
+
+    <div
+      class="grid gap-0 divide-y divide-stone-900/8 border-t border-stone-900/8 text-center lg:grid-cols-2 lg:divide-x lg:divide-y-0 lg:text-left"
+    >
+      {
+        siteData.packages.map((pkg, index) => (
+          <article class="space-y-6 py-8 lg:px-8 lg:py-10 first:lg:pl-0 last:lg:pr-0">
+            <div class="space-y-4">
+              <div class="flex items-center justify-center gap-4 text-stone-500 lg:justify-start">
+                <span class="h-px w-8 bg-stone-900/14"></span>
+                <p class="text-[0.72rem] font-semibold uppercase tracking-[0.3em]">
+                  0{index + 1}
+                </p>
+              </div>
+              <div class="space-y-2">
+                <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-3xl">
+                  {pkg.title}
+                </h3>
+                <p class="text-lg font-medium text-stone-500">{pkg.price}</p>
+              </div>
+            </div>
+
+            <ul class="space-y-0 border-t border-stone-900/8 pt-2">
+              {pkg.features.map((feature) => (
+                <li class="flex gap-4 border-b border-stone-900/8 py-3 text-left text-sm leading-7 text-stone-700 last:border-b-0 last:pb-0">
+                  <span class="mt-[0.9rem] block h-px w-4 shrink-0 bg-stone-400/60"></span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mx-auto max-w-3xl text-center text-sm leading-7 text-stone-500">
+      Rates vary with event format, duration, and planning support. Reach out
+      for a tailored quote based on your programme needs.
+    </p>
   </div>
 </section>

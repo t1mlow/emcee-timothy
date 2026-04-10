@@ -1,30 +1,123 @@
 ---
+import { Image } from "astro:assets";
 import SectionHeading from "../SectionHeading.astro";
 import { siteData } from "../../data/site";
+import peopleImage from "../../assets/gallery/people.jpg";
+
+const [firstTestimonial, featuredTestimonial, thirdTestimonial] =
+  siteData.testimonials;
 ---
 
 <section
-  class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 text-stone-900 sm:py-24"
+  class="relative border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24"
 >
-  <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
+  <svg
+    aria-hidden="true"
+    class="pointer-events-none absolute right-[6%] top-20 hidden lg:block xl:right-[8%]"
+    width="220"
+    height="120"
+    viewBox="0 0 220 120"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g fill="none" stroke="rgba(28,25,23,0.12)" stroke-linecap="round">
+      <path d="M18 82 C48 44, 92 28, 146 34" stroke-width="1.4"></path>
+      <path d="M54 96 C86 62, 126 50, 186 54" stroke-width="1.2"></path>
+      <path d="M104 100 C136 76, 166 72, 202 74" stroke-width="1.1"></path>
+      <line x1="150" y1="20" x2="150" y2="44" stroke-width="1"></line>
+      <line x1="166" y1="16" x2="166" y2="38" stroke-width="1"></line>
+      <line x1="182" y1="22" x2="182" y2="40" stroke-width="1"></line>
+      <circle cx="34" cy="82" r="3" fill="rgba(28,25,23,0.12)" stroke="none"></circle>
+      <circle cx="186" cy="54" r="3" fill="rgba(28,25,23,0.12)" stroke="none"></circle>
+    </g>
+  </svg>
+
+  <div class="mx-auto max-w-7xl space-y-12 px-5 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="From the people"
-      title="Feedback that reflects Timothy's stage presence."
+      eyebrow="In their words"
+      title="What the room remembers."
+      mobileCenter={true}
     />
 
-    <div class="grid gap-5 lg:grid-cols-3">
-      {
-        siteData.testimonials.map((testimonial) => (
-          <blockquote class="border border-stone-900/10 bg-white/88 p-6">
-            <p class="text-base leading-8 text-stone-800">
-              "{testimonial.quote}"
-            </p>
-            <footer class="mt-6 text-sm font-semibold text-stone-900">
-              {testimonial.author}
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div class="grid gap-8">
+        <div class="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
+          <div
+            class="pointer-events-none absolute inset-0 translate-x-[6px] translate-y-[6px] border border-stone-900/12"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="group relative overflow-hidden border border-stone-900/12 bg-white/90 shadow-[0_12px_40px_rgba(25,25,25,0.07)]"
+          >
+            <span
+              class="pointer-events-none absolute left-3 top-3 z-10 block h-6 w-6 border-l border-t border-white/80 shadow-[0_0_0_1px_rgba(28,25,23,0.08)]"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="pointer-events-none absolute bottom-3 right-3 z-10 block h-6 w-6 border-b border-r border-white/80 shadow-[0_0_0_1px_rgba(28,25,23,0.08)]"
+              aria-hidden="true"
+            ></span>
+            <Image
+              src={peopleImage}
+              alt="Guests enjoying an emceed event"
+              class="aspect-[5/4] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
+        </div>
+
+        {[firstTestimonial].map((testimonial) => (
+          <blockquote class="flex flex-col gap-5 border-t border-stone-900/8 pt-6 text-center lg:text-left">
+            <span
+              class="block font-['Plus_Jakarta_Sans'] text-[3rem] font-semibold leading-none text-stone-900/8"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+            <p class="text-sm leading-8 text-stone-700">{testimonial.quote}</p>
+            <footer class="mt-auto flex items-center justify-center gap-3 border-t border-stone-900/8 pt-5 lg:justify-start">
+              <span class="block h-px w-6 bg-stone-400/50" aria-hidden="true" />
+              <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-stone-500">
+                {testimonial.author}
+              </span>
             </footer>
           </blockquote>
-        ))
-      }
+        ))}
+      </div>
+
+      <div class="grid gap-8">
+        <blockquote class="relative flex flex-col gap-6 border-t border-stone-900/8 bg-white/45 px-6 py-6 text-center sm:px-8 lg:text-left">
+          <span
+            class="block font-['Plus_Jakarta_Sans'] text-[4rem] font-semibold leading-none text-stone-900/8"
+            aria-hidden="true"
+          >
+            &ldquo;
+          </span>
+          <p class="text-[0.98rem] leading-8 text-stone-700">
+            {featuredTestimonial.quote}
+          </p>
+          <footer class="mt-auto flex items-center justify-center gap-3 border-t border-stone-900/8 pt-5 lg:justify-start">
+            <span class="block h-px w-6 bg-stone-400/50" aria-hidden="true" />
+            <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-stone-500">
+              {featuredTestimonial.author}
+            </span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="flex flex-col gap-5 border-t border-stone-900/8 pt-6 text-center lg:text-left">
+          <span
+            class="block font-['Plus_Jakarta_Sans'] text-[3rem] font-semibold leading-none text-stone-900/8"
+            aria-hidden="true"
+          >
+            &ldquo;
+          </span>
+          <p class="text-sm leading-8 text-stone-700">{thirdTestimonial.quote}</p>
+          <footer class="mt-auto flex items-center justify-center gap-3 border-t border-stone-900/8 pt-5 lg:justify-start">
+            <span class="block h-px w-6 bg-stone-400/50" aria-hidden="true" />
+            <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-stone-500">
+              {thirdTestimonial.author}
+            </span>
+          </footer>
+        </blockquote>
+      </div>
     </div>
   </div>
 </section>

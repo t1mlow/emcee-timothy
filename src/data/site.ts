@@ -76,22 +76,31 @@ export const siteData = {
   testimonials: [
     {
       quote:
-        "Professional and charismatic emceeing that brought our event to life. Timothy held the crowd with confidence and made the programme flow naturally.",
-      author: "Past event organiser",
+        "Timothy absolutely shone as the emcee of my company's Christmas party two years ago. He was confident, witty, and effortlessly engaging, keeping the energy up all night while the programme flowed smoothly. He was also able to improvise when needed. A standout host with a real flair for the mic.",
+      author: "Selwyn",
     },
     {
       quote:
-        "He knows how to adjust the energy of the room. The stage presence felt relaxed but very intentional, and that made guests pay attention.",
-      author: "Community partner",
+        "Timothy was an outstanding co-emcee at our recent badminton tournament, bringing a strong mix of professionalism, energy, and charisma to the event. He handled player and official introductions smoothly, kept the event on schedule, and led the prize ceremony with confidence and clarity. His stage presence, clear communication, and ability to engage the crowd added real value to the event. The feedback from both the audience and clients was overwhelmingly positive. Whether it's a sports event, corporate function, or social gathering, Timothy is a reliable and engaging emcee who makes the entire experience more enjoyable and stress-free.",
+      author: "Sureen",
     },
     {
       quote:
-        "Friendly, reliable, and easy to work with. Timothy made the audience feel included and helped the whole evening land smoothly.",
-      author: "Programme coordinator",
+        "Professional and charismatic emceeing that brought our event to life. Timothy holds an engaging energy with refined stage presence. An assured choice we'd be glad to work with again.",
+      author: "Joshua",
     },
   ],
   award:
     "Public Speaking Award / Certificate - Rochester Institute of Technology 2020",
+  recentEvents: [
+    "Network Couriers Pte Ltd – Dinner and Dance",
+    "Vida City Christmas Pasir Ris Community Event",
+    "JK Tech Badminton Tournament",
+    "Braemar Shipping Christmas Party – Corporate Event",
+    "Pentecost Methodist Church Camp Dinner",
+    "Anglo-Chinese School (Barker Road) Scouts Graduation Night",
+    "Anglo-Chinese School (Barker Road) Class of 2014 Graduation Night",
+  ],
   contact: {
     instagramUrl: "https://www.instagram.com/mceetimothy/",
     whatsappUrl: "https://wa.me/6596917191",
@@ -100,7 +109,7 @@ export const siteData = {
   packages: [
     {
       title: "Standard Mic",
-      price: "$350 / Hour",
+      price: "Starting from $350",
       features: [
         "Over the phone or Zoom call to run through the event",
         "Basic script aligned to your template and flow",
@@ -109,7 +118,7 @@ export const siteData = {
     },
     {
       title: "Golden Mic",
-      price: "$450 / Hour",
+      price: "Starting from $450",
       features: [
         "In-person meetup to run through event flow",
         "Fully customizable flow with client input",

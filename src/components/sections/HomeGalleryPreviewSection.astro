@@ -4,32 +4,48 @@ import SectionHeading from "../SectionHeading.astro";
 import { siteData } from "../../data/site";
 ---
 
-<section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+<section class="border-b border-stone-900/10 bg-[#f0ebe3] py-20 sm:py-24">
   <div class="mx-auto max-w-7xl space-y-10 px-5 sm:px-6 lg:px-8">
     <SectionHeading
       eyebrow="Selected moments"
       title="A quick look at the energy, audience range, and event environments."
       text="These visuals are wired to the local image files already in the project. You can replace or add more later without changing the layout."
+      mobileCenter={true}
     />
 
-    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {
-        siteData.photos.map((photo, index) => (
-          <article
-            class:list={[
-              "overflow-hidden border border-white/80 bg-white/90",
-              index === 2 && "md:col-span-2 xl:col-span-2",
-            ]}
-          >
-            <Image
-              src={photo.image}
-              alt={photo.title}
-              class="h-72 w-full object-cover transition duration-500 hover:scale-105"
-            />
-            <div class="space-y-2 p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
-                {photo.location}
-              </p>
+        siteData.photos.slice(0, 3).map((photo) => (
+          <article class="space-y-5 text-center md:text-left">
+            <div class="relative">
+              <div
+                class="pointer-events-none absolute inset-0 translate-x-[6px] translate-y-[6px] border border-stone-900/12"
+                aria-hidden="true"
+              ></div>
+              <div class="group relative overflow-hidden border border-stone-900/12 bg-white/90">
+                <span
+                  class="pointer-events-none absolute left-3 top-3 z-10 block h-5 w-5 border-l border-t border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="pointer-events-none absolute bottom-3 right-3 z-10 block h-5 w-5 border-b border-r border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
+                  aria-hidden="true"
+                ></span>
+                <Image
+                  src={photo.image}
+                  alt={photo.title}
+                  class="h-72 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2 px-1 md:pl-1 md:pr-0">
+              <div class="flex items-center justify-center gap-3 md:justify-start">
+                <span class="block h-px w-6 bg-stone-400/50"></span>
+                <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
+                  {photo.location}
+                </p>
+              </div>
               <h3 class="font-['Plus_Jakarta_Sans'] text-lg font-semibold tracking-[-0.03em] text-stone-900">
                 {photo.title}
               </h3>
@@ -42,8 +58,8 @@ import { siteData } from "../../data/site";
       }
     </div>
 
-    <div class="pt-4">
-      <a href="/gallery" class="btn-secondary">Open full gallery</a>
+    <div class="flex justify-center pt-6">
+      <a href="/gallery" class="btn-secondary">View complete gallery</a>
     </div>
   </div>
 </section>

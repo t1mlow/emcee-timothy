@@ -14,6 +14,7 @@ import { siteData } from "../../data/site";
         eyebrow="The approach"
         title="Present in every room. Tuned to every crowd."
         text="A minimalist stage presence does not mean flat delivery. The hosting approach shifts with the crowd while keeping the tone intentional and composed."
+        mobileCenter={true}
       />
 
       <div class="hidden lg:flex lg:justify-end lg:pt-3" aria-hidden="true">
@@ -45,7 +46,7 @@ import { siteData } from "../../data/site";
     </div>
 
     <div
-      class="grid gap-0 divide-y divide-stone-900/8 lg:grid-cols-3 lg:divide-x lg:divide-y-0"
+      class="grid gap-0 divide-y divide-stone-900/8 text-center lg:grid-cols-3 lg:divide-x lg:divide-y-0 lg:text-left"
     >
       {
         siteData.services.map((service, index) => (

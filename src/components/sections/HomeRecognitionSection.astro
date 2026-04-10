@@ -2,27 +2,83 @@
 import { siteData } from "../../data/site";
 ---
 
-<section class="border-b border-stone-900/10 bg-[#fbfaf7] py-20 sm:py-24">
+<section class="border-b border-stone-900/10 bg-[#f0ebe3] py-20 sm:py-24">
   <div
-    class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-8"
+    class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.45fr_0.55fr] lg:items-start lg:px-8"
   >
-    <div class="space-y-4">
-      <p
-        class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600"
+    <!-- Left: heading + award -->
+    <div class="flex flex-col gap-8 text-center lg:text-left">
+      <div class="order-2 space-y-5 lg:order-1">
+        <div class="flex items-center justify-center gap-4 lg:justify-start">
+          <span class="block h-px w-10 bg-stone-400/60"></span>
+          <span
+            class="text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-stone-500"
+            >On the record</span
+          >
+          <span class="block h-px w-10 bg-stone-400/60 lg:hidden"></span>
+        </div>
+        <h2
+          class="font-['Plus_Jakarta_Sans'] text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-stone-900"
+          style="word-spacing: 0.18em;"
+        >
+          Recent Events.
+        </h2>
+      </div>
+
+      <!-- Award credential -->
+      <div class="order-1 space-y-3 border-t border-stone-900/8 pt-6 lg:order-2">
+        <div class="flex items-center justify-center gap-4 lg:justify-start">
+          <span class="block h-px w-10 bg-stone-400/60"></span>
+          <span
+            class="text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-stone-500"
+            >Recognition</span
+          >
+          <span class="block h-px w-10 bg-stone-400/60 lg:hidden"></span>
+        </div>
+        <p class="text-base leading-8 text-stone-700">
+          Public Speaking Award / Certificate
+        </p>
+        <p class="text-sm leading-7 text-stone-500">
+          Rochester Institute of Technology, 2020
+        </p>
+      </div>
+
+      <!-- Compact blueprint lines -->
+      <svg
+        aria-hidden="true"
+        class="order-3 mx-auto hidden w-full max-w-md lg:mx-0 lg:block lg:max-w-none"
+        viewBox="0 0 400 80"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
       >
-        Recognition
-      </p>
-      <h2
-        class="max-w-2xl font-['Plus_Jakarta_Sans'] text-3xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-4xl"
-      >
-        {siteData.award}
-      </h2>
+        <g stroke="rgba(28,25,23,0.11)" stroke-linecap="round" fill="none">
+          <line x1="0" y1="16" x2="400" y2="16" stroke-width="1"></line>
+          <line x1="0" y1="9" x2="0" y2="23" stroke-width="1.2"></line>
+          <line x1="400" y1="9" x2="400" y2="23" stroke-width="1.2"></line>
+
+          <line x1="40" y1="44" x2="280" y2="44" stroke-width="0.9"></line>
+          <line x1="40" y1="38" x2="40" y2="50" stroke-width="1.1"></line>
+          <line x1="280" y1="39" x2="280" y2="49" stroke-width="0.9"></line>
+
+          <line x1="0" y1="70" x2="160" y2="70" stroke-width="0.7" stroke-opacity="0.7"></line>
+          <line x1="0" y1="65" x2="0" y2="75" stroke-width="0.9" stroke-opacity="0.7"></line>
+          <line x1="160" y1="65" x2="160" y2="75" stroke-width="0.7" stroke-opacity="0.7"></line>
+        </g>
+      </svg>
     </div>
-    <div
-      class="laurel text-[5rem] leading-none text-stone-500/80"
-      aria-hidden="true"
-    >
-      <div>+</div>
-    </div>
+
+    <!-- Right: event list -->
+    <ul class="divide-y divide-stone-900/8">
+      {
+        siteData.recentEvents.map((event, index) => (
+          <li class="flex items-baseline gap-5 py-4 first:pt-0 last:pb-0">
+            <span class="shrink-0 text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-stone-400">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span class="text-sm leading-7 text-stone-700">{event}</span>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>

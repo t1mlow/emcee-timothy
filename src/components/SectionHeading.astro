@@ -4,22 +4,37 @@ interface Props {
   title: string;
   text?: string;
   align?: "left" | "center";
+  mobileCenter?: boolean;
 }
 
-const { eyebrow, title, text, align = "left" } = Astro.props;
+const { eyebrow, title, text, align = "left", mobileCenter = false } =
+  Astro.props;
 const centered = align === "center";
 ---
 
-<div class:list={["space-y-4", centered && "mx-auto max-w-2xl text-center"]}>
+<div
+  class:list={[
+    "space-y-4",
+    centered && "mx-auto max-w-2xl text-center",
+    mobileCenter && !centered && "text-center sm:text-left",
+  ]}
+>
   {
     eyebrow && (
       <div
-        class:list={["flex items-center gap-4", centered && "justify-center"]}
+        class:list={[
+          "flex items-center gap-4",
+          centered && "justify-center",
+          mobileCenter && !centered && "justify-center sm:justify-start",
+        ]}
       >
         <span class="h-px w-12 bg-stone-900/18" />
         <p class="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">
           {eyebrow}
         </p>
+        {mobileCenter && !centered && (
+          <span class="h-px w-12 bg-stone-900/18 sm:hidden" />
+        )}
       </div>
     )
   }
