@@ -10,6 +10,7 @@ type VideoItem = {
   date: string;
   description: string;
   embedUrl?: string;
+  videoSrc?: string;
   poster: string;
   duration: string;
 };
@@ -29,9 +30,9 @@ export const siteData = {
   heroText:
     "Timothy hosts community celebrations, private events, and corporate gatherings with a warm stage presence that keeps the room engaged from the first introduction to the closing line.",
   about: [
-    "It started in primary school, when Timothy realised singing was not quite his lane, but his voice, presence, and energy often stood out. That early encouragement grew into a genuine love for public speaking, hosting, and creating the right atmosphere for a room.",
-    "Today, emceeing is a passion project alongside his career in shipping. With a calm delivery, clear communication, and an engaging stage presence, Timothy brings fresh energy to celebrations, corporate gatherings, and community events without losing the sense of professionalism they require.",
-    "He is excited to keep growing in this space, take on new opportunities, and contribute to programmes that feel smooth, memorable, and enjoyable for both organisers and audiences.",
+    "It started in primary school, when I realised singing wasn't quite my lane—but my voice, presence, and energy often stood out. That early encouragement grew into a genuine love for public speaking, hosting, and creating the right atmosphere for a room.",
+    "Today, emceeing is a passion project alongside my career in shipping. With a calm delivery, clear communication, and an engaging stage presence, I aim to bring fresh energy to celebrations, corporate gatherings, and community events—while maintaining the professionalism they require.",
+    "I'm excited to keep growing in this space, take on new opportunities, and contribute to programmes that feel smooth, memorable, and enjoyable for both organisers and audiences.",
   ],
   highlights: [
     {
@@ -154,28 +155,28 @@ export const siteData = {
   ] as PhotoItem[],
   videos: [
     {
-      title: "Vida City Christmas Community Celebration",
-      date: "Dec 14, 2025",
-      description:
-        "Recommended setup: replace this card with a compressed MP4 or a YouTube/Vimeo embed.",
-      duration: "00:53",
-      poster: "/gallery/event-01.jpg",
+      title: "Community Celebration",
+      date: "",
+      description: "Festive community event highlight.",
+      videoSrc: "/gallery/christmas-clip.mp4",
+      duration: "01:04",
+      poster: "/gallery/poster-christmas-clip.jpg",
     },
     {
-      title: "Network Courier Dinner and Dance",
-      date: "Dec 13, 2025",
-      description:
-        "Use this slot for a short highlight reel or host it externally to keep the site fast.",
-      duration: "01:20",
-      poster: "/gallery/event-03.jpg",
+      title: "Dinner and Dance",
+      date: "",
+      description: "Corporate dinner and dance highlight.",
+      videoSrc: "/gallery/dinner-dance.mp4",
+      duration: "02:08",
+      poster: "/gallery/poster-dinner-dance.jpg",
     },
     {
-      title: "JK Tech Badminton Event",
-      date: "Dec 13, 2024",
-      description:
-        "If the raw file is very large, compress it first and keep the website version under web-friendly sizes.",
-      duration: "02:00",
-      poster: "/gallery/event-05.jpg",
+      title: "Community Event",
+      date: "",
+      description: "Live hosting at a community event.",
+      videoSrc: "/gallery/video3.mp4",
+      duration: "07:56",
+      poster: "/gallery/poster-video3.jpg",
     },
   ] as VideoItem[],
 };

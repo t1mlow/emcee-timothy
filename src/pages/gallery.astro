@@ -176,39 +176,32 @@ import Layout from "../layouts/Layout.astro";
                       class="pointer-events-none absolute bottom-3 right-3 z-10 block h-5 w-5 border-b border-r border-white/80 [filter:drop-shadow(0_0_1px_rgba(28,25,23,0.35))]"
                       aria-hidden="true"
                     ></span>
-                    <img
-                      src={video.poster}
-                      alt={video.title}
-                      class="h-64 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
-                    />
-                    <!-- Date + duration bar -->
-                    <div class="absolute inset-x-0 top-0 flex items-center justify-between px-5 py-3 text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-white/80">
-                      <span>{video.date}</span>
-                      <span>{video.duration}</span>
-                    </div>
-                    <!-- Play button -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                      <div class="flex h-14 w-14 items-center justify-center rounded-full border border-white/50 bg-stone-950/48 backdrop-blur-sm transition duration-300 group-hover:bg-stone-950/65">
-                        <svg
-                          viewBox="0 0 24 24"
-                          class="h-5 w-5 translate-x-0.5 fill-white"
-                          aria-hidden="true"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
+                    {video.videoSrc ? (
+                      <video
+                        src={video.videoSrc}
+                        poster={video.poster}
+                        controls
+                        preload="none"
+                        class="h-64 w-full object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={video.poster}
+                        alt={video.title}
+                        class="h-64 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
+                      />
+                    )}
                   </div>
                 </div>
                 <div class="space-y-2 px-1">
                   <div class="flex items-center justify-center gap-3 lg:justify-start">
                     <span class="block h-px w-6 bg-stone-400/50"></span>
                     <p class="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-stone-500">
-                      {video.date}
+                      {video.duration} · Event highlight
                     </p>
                   </div>
                   <h2 class="font-['Plus_Jakarta_Sans'] text-lg font-semibold tracking-[-0.03em] text-stone-900">
-                    {video.title}
+                    {video.description}
                   </h2>
                 </div>
               </article>
